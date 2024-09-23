@@ -1,7 +1,8 @@
 import { useSession } from '@/providers/session-provider';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
+import { router } from 'expo-router';
 
-export default function Index() {
+export default function Home() {
   const { signOut } = useSession();
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -13,6 +14,8 @@ export default function Index() {
       >
         Sign Out
       </Text>
+      <Button onPress={() => router.push('/discounts')} title="Discounts" />
+      <Button onPress={() => router.push('/benefits')} title="Benefits" />
     </View>
   );
 }

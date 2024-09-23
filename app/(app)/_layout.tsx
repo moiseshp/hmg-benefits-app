@@ -1,6 +1,7 @@
-import { Redirect, Stack } from 'expo-router';
+import { Redirect, Slot, Stack } from 'expo-router';
 import { useSession } from '@/providers/session-provider';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function AppLayout() {
   const { session, isLoading } = useSession();
@@ -19,5 +20,15 @@ export default function AppLayout() {
   }
 
   // This layout can be deferred because it's not the root layout.
-  return <Stack />;
+  return (
+    <SafeAreaView className="flex-1">
+      <View className="bg-red-300 p-6">
+        <Text>Header</Text>
+      </View>
+      <Slot />
+      <View className="bg-red-300 p-6">
+        <Text>BottomNavigation</Text>
+      </View>
+    </SafeAreaView>
+  );
 }
