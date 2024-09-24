@@ -12,10 +12,8 @@ export default function Home() {
           signOut();
         }}
       >
-        Sign Out Renew
+        Sign Out Tabs
       </Text>
-      <Button onPress={() => router.push('/discounts')} title="Discounts" />
-      <Button onPress={() => router.push('/benefits')} title="Benefits" />
     </View>
   );
 }
