@@ -1,14 +1,25 @@
+import { AppBar } from '@/components/ui/app-bar';
+import { Text } from '@/components/ui/text';
 import { Link, Tabs } from 'expo-router';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
-export default function AppLayout() {
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
         header: () => (
-          <View>
-            <Text>Navbar</Text>
-          </View>
+          <AppBar>
+            <View className="flex flex-row space-x-3 items-center">
+              <View className="h-12 w-12 rounded-full bg-zinc-600 flex flex-row items-center justify-center">
+                <Text>M</Text>
+              </View>
+              <View>
+                <Text className="text-xl font-bold">Hola, Moisés</Text>
+                <Text>41157679</Text>
+              </View>
+            </View>
+            <Text>IC</Text>
+          </AppBar>
         ),
       }}
       tabBar={(data) => {

@@ -3,7 +3,7 @@ import { useSession } from '@/providers/session-provider';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function AppLayout(props: any) {
+export default function AppLayout() {
   const { session, isLoading } = useSession();
 
   if (isLoading) {
@@ -15,23 +15,7 @@ export default function AppLayout(props: any) {
   }
 
   return (
-    // <SafeAreaView className="flex-1">
-    //   <View className="bg-red-300 p-6 flex flex-row justify-between">
-    //     <View>
-    //       <Text>Hola, Moisés</Text>
-    //       <Text>D. 41157679</Text>
-    //     </View>
-    //     <Text>IC</Text>
-    //   </View>
-    //   <Slot />
-    //   <View className="bg-red-300 p-6 flex flex-row gap-x-4">
-    //     <Link href="/">Home</Link>
-    //     <Link href="/benefits">Beneficios</Link>
-    //     <Link href="/discounts">Descuentos</Link>
-    //   </View>
-    // </SafeAreaView>
-
-    <>
+    <SafeAreaView className="flex-1">
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="benefits/[uuid]" />
@@ -42,6 +26,6 @@ export default function AppLayout(props: any) {
         <Link href="/benefits">Beneficios</Link>
         <Link href="/discounts">Descuentos</Link>
       </View> */}
-    </>
+    </SafeAreaView>
   );
 }
