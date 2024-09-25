@@ -1,11 +1,13 @@
 import { useSession } from '@/providers/session-provider';
-import { Button, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { router } from 'expo-router';
+import { AppBar } from '@/components/ui/app-bar';
+import { Text } from '@/components/ui/text';
 
 export default function Home() {
   const { signOut } = useSession();
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <>
       <Text
         onPress={() => {
           signOut();
@@ -13,6 +15,6 @@ export default function Home() {
       >
         Sign Out Tabs
       </Text>
-    </View>
+    </>
   );
 }
