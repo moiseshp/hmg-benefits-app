@@ -15,7 +15,7 @@ export default function AppLayout() {
         const {
           state: { routeNames, routes },
         } = data;
-        console.info({ routeNames, routes });
+        // console.info({ routeNames, routes });
         return (
           <View className="bg-red-300 p-6 flex flex-row gap-x-4">
             <Link href="/">Home</Link>
