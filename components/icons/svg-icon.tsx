@@ -1,12 +1,6 @@
 // Icons based https://lucide.dev/icons
-import { cn } from '@/libs/utils';
 import { Svg, SvgProps } from 'react-native-svg';
-import {
-  ColorProps,
-  TEXT_COLORS,
-  SizeProps,
-  isDarkTheme,
-} from '@/components/theme';
+import { ColorProps, SizeProps, isDarkTheme } from '@/components/theme';
 import { useColorScheme } from 'nativewind';
 
 export type IconProps = ColorProps & SizeProps & SvgProps;

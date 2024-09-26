@@ -1,7 +1,6 @@
 import { Link, Redirect, Slot, Stack } from 'expo-router';
 import { useSession } from '@/providers/session-provider';
 import { Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '@/components/ui/button';
 
 export default function AppLayout() {
@@ -16,28 +15,21 @@ export default function AppLayout() {
   }
 
   return (
-    <SafeAreaView className="flex-1">
-      <Stack
-        screenOptions={{
-          header: () => {
-            return (
-              <View>
-                <Text className="text-lg font-bold">App Layout</Text>
-                <Button>Volver</Button>
-              </View>
-            );
-          },
-        }}
-      >
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="benefits/[uuid]" />
-        <Stack.Screen name="discounts/[uuid]" />
-      </Stack>
-      {/* <View className="bg-red-300 p-6 flex flex-row gap-x-4">
-        <Link href="/">Home</Link>
-        <Link href="/benefits">Beneficios</Link>
-        <Link href="/discounts">Descuentos</Link>
-      </View> */}
-    </SafeAreaView>
+    <Stack
+      screenOptions={{
+        header: () => {
+          return (
+            <View>
+              <Text className="text-lg font-bold">App Layout</Text>
+              <Button>Volver</Button>
+            </View>
+          );
+        },
+      }}
+    >
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="benefits/[uuid]" />
+      <Stack.Screen name="discounts/[uuid]" />
+    </Stack>
   );
 }
